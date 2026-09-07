@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>Gloob</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="mobile-topbar">
+  <button class="hamburger-btn" data-action="toggle-sidebar" aria-label="Menu">&#9776;</button>
+  <button class="logo" data-action="nav-home" type="button">Gloob</button>
+  <div id="authAreaMobile" class="auth-area"></div>
+</div>
+
+<div class="sidebar-backdrop" data-action="close-sidebar"></div>
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <button class="logo sidebar-logo" data-action="nav-home" type="button">Gloob</button>
+
+    <nav class="sidebar-nav">
+      <button data-action="nav-home" class="sidebar-item" data-view="home">
+        <span class="icon">&#8962;</span><span>Home</span>
+      </button>
+      <button data-action="nav-explore" class="sidebar-item" data-view="explore">
+        <span class="icon">&#10022;</span><span>Explore</span>
+      </button>
+      <button data-action="nav-search" class="sidebar-item" data-view="search">
+        <span class="icon">&#9013;</span><span>Search</span>
+      </button>
+      <button data-action="nav-profile" class="sidebar-item" data-view="profile">
+        <span class="icon">&#9670;</span><span>Profile</span>
+      </button>
+      <button data-action="nav-moderation" class="sidebar-item hidden" data-view="moderation" id="navModeration">
+        <span class="icon">&#9873;</span><span>Moderation</span>
+      </button>
+      <button data-action="nav-owner" class="sidebar-item hidden" data-view="owner" id="navOwner">
+        <span class="icon">&#9812;</span><span>Owner panel</span>
+      </button>
+      <button data-action="nav-settings" class="sidebar-item" data-view="settings">
+        <span class="icon">&#9881;</span><span>Settings</span>
+      </button>
+    </nav>
+
+    <button class="sidebar-post-btn" data-action="nav-create" type="button">+ Post</button>
+
+    <div class="sidebar-auth" id="authAreaDesktop"></div>
+  </aside>
+
+  <main class="main-area">
+    <div id="appContent" class="app-content"></div>
+  </main>
+</div>
+
+<div id="modalRoot"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="data.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
